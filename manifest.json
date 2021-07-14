@@ -1,0 +1,17 @@
+{
+	"manifest_version": 2,
+	"name": "ClearNet",
+	"version": "0.1 Alpha",
+	"author": "Jolteonshifter",
+	"description": "A tool designed to provide a clean, distraction free enviroment aimed to allow people to focus with ease",
+	
+	"icons": {
+		"48": "icons/bar.jpg"
+	},
+
+	"content_scripts": [
+		{
+			"js": ["blocker.js"]
+		}
+	]
+}
