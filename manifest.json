@@ -9,9 +9,15 @@
 		"48": "icons/bar.jpg"
 	},
 
+        "browser_action": {
+          "default_icon": "icons/ClearNet-32",
+          "default_popup": "settings/site-lister.html"
+        },
+
 	"content_scripts": [
-		{
-			"js": ["blocker.js"]
+	        {
+                  "matches": ["https://developer.mozilla.org/*"], 
+                  "js": ["scripts/blocker.js"]
 		}
 	]
 }
