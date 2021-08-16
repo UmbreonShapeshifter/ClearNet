@@ -4,8 +4,8 @@
 	"version": "0.1 Alpha",
 	"author": "Jolteonshifter",
 	"description": "A tool designed to provide a clean, distraction free enviroment aimed to allow people to focus with ease",
-	
-	"icons": {
+	"permission": "storage",
+        "icons": {
 		"48": "icons/bar.jpg"
 	},
 
@@ -16,7 +16,7 @@
 
 	"content_scripts": [
 	        {
-                  "matches": ["https://developer.mozilla.org/*"], 
+                  "matches": ["<all_urls>"], 
                   "js": ["scripts/blocker.js"]
 		}
 	]

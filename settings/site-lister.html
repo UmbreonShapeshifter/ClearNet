@@ -2,14 +2,34 @@
 <html>
   <body>
     <h2>Enter the URLs of sites you want to block</h2>
-    <label for="name">Seperate URLs with commas</label>
-      <p></p>
-      <i>Example: youtube.com, foobar.org</i>
-    <textarea name="Text1" cols="400" rows="900"></textarea>
-  </body>
+    <div>
+      <label for="name">Seperate URLs with newlines</label>   
+        <div>    
+          <i>Example: youtube.com, foobar.org</i>
+            <div>  
+              <textarea name="Text1" cols="100" rows="25"></textarea>
+        </div>
+      </div>
+    </div>
 
-  <script>
-    const data = document.getElementById("myText").value.split(",");
+  </body>
+      <input type="button" value="Save Settings"></input>
+  <script type="text/javascript">
+    
+    
+
+    const button = document.getElementById("Save Settings")
+    
+    if (button.addEventListener) {
+      button.addEventListener("click", handleData())
+    } else if (button.attachEvent) {
+      button.attachEvent('onclick', handleData())
+    }
+
+    function handleData () {
+      const data = document.getElementById("myText").value.split("\n"); 
+      browser.storage.local.set(data)
+    }
 
   </script>
 </html>
