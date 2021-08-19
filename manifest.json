@@ -4,14 +4,13 @@
 	"version": "0.1 Alpha",
 	"author": "Jolteonshifter",
 	"description": "A tool designed to provide a clean, distraction free enviroment aimed to allow people to focus with ease",
-	"permission": "storage",
+	"permission": ["storage"],
         "icons": {
 		"48": "icons/bar.jpg"
 	},
 
-        "browser_action": {
-          "default_icon": "icons/ClearNet-32",
-          "default_popup": "settings/site-lister.html"
+        "options_ui": {
+          "page": "settings/site-lister.html"
         },
 
 	"content_scripts": [

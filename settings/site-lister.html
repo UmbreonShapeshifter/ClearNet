@@ -6,30 +6,26 @@
       <label for="name">Seperate URLs with newlines</label>   
         <div>    
           <i>Example: youtube.com, foobar.org</i>
-            <div>  
-              <textarea name="Text1" cols="100" rows="25"></textarea>
-        </div>
-      </div>
+	  <form>
+		  <input type="text" id="urls"></input>
+		  <div>
+		  	<button type="submit">Save settings</button>
+		</div>
+	  </form>
     </div>
 
   </body>
-      <input type="button" value="Save Settings"></input>
   <script type="text/javascript">
-    
-    
-
-    const button = document.getElementById("Save Settings")
-    
-    if (button.addEventListener) {
-      button.addEventListener("click", handleData())
-    } else if (button.attachEvent) {
-      button.attachEvent('onclick', handleData())
-    }
-
-    function handleData () {
-      const data = document.getElementById("myText").value.split("\n"); 
-      browser.storage.local.set(data)
-    }
-
+	function saveOptions(e) {
+		e.preventDefault();
+		browser.storage.sync.set({
+			urls: document.querySelector("#urls").value.split(',')
+		});
+	}
+	function restoreOptions() {
+		function setCurrentChoice (result) {
+			document.querySelector('#urls').value; = result.urls
+		}
+	}
   </script>
 </html>
