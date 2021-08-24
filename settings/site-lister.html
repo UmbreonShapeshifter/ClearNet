@@ -15,17 +15,5 @@
     </div>
 
   </body>
-  <script type="text/javascript">
-	function saveOptions(e) {
-		e.preventDefault();
-		browser.storage.sync.set({
-			urls: document.querySelector("#urls").value.split(',')
-		});
-	}
-	function restoreOptions() {
-		function setCurrentChoice (result) {
-			document.querySelector('#urls').value; = result.urls
-		}
-	}
-  </script>
+  <script src="settings.js"></script>
 </html>
